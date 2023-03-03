@@ -1,0 +1,43 @@
+/******************************************************************************
+
+3) Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa,
+na linguagem que desejar, que calcule e retorne:
+	• O menor valor de faturamento ocorrido em um dia do mês;
+	• O maior valor de faturamento ocorrido em um dia do mês;
+	• Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int n=30, vetor[n], i, maior,menor, soma=0, media,superior=0;
+    
+    printf("informe o numero de dias do mes");
+    scanf("%d", &n);
+    
+    for(i =0; i <n; i++){
+        printf ("Digite o valor do dia %d:",i+1);
+        scanf("%i", &vetor[i]);
+        soma +=vetor[i];
+        media = soma/n;
+    }
+    
+    maior = vetor[0];
+    menor = vetor[0];
+    for(i =0; i <n; i++){
+        printf("%d-", vetor[i]);
+        if(menor>vetor[i]){
+            menor=vetor[i];
+        }
+        if (vetor[i]> maior){
+            maior = vetor[i];
+        }
+    }
+    if(maior>media){
+        superior++;
+    }
+    printf("\n menor: %d \n maior: %d \n media: %d\n", menor,maior, media);
+    printf("o valor de faturamento diário foi superior à média mensal em %i dias", superior);
+   return 0;
+}   
+  

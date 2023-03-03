@@ -1,0 +1,30 @@
+/******************************************************************************
+5) Escreva um programa que inverta os caracteres de um string.
+
+IMPORTANTE:
+	a) Essa string pode ser informada através de qualquer entrada de sua preferência 
+	ou pode ser previamente definida no código;
+	b) Evite usar funções prontas, como, por exemplo, reverse;
+
+*******************************************************************************/
+#include <stdio.h>
+#include <string.h>
+void inverter (char vetor[]){
+    int i,aux, fim, tamanho = strlen(vetor);
+    fim = tamanho -1;
+    for(i=0; i<tamanho/2; i++){
+        aux = vetor[i];
+        vetor[i]=vetor[fim];
+        vetor[fim] = aux;
+        fim--;
+    }
+}
+int main()
+{
+    char palavra [11] = {"Hello World"};
+    printf("%s\n", palavra);
+
+    inverter(palavra);
+    printf("%s", palavra);
+    return 0;
+}
